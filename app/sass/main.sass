@@ -1,0 +1,48 @@
+.img-responsive
+	margin: 0 auto
+
+p
+	color: #ccc
+	text-transform: uppercase
+
+.row
+	background-color: #222
+
+input[type=text]
+	height: 30px
+	margin-bottom: 20px
+	border: 1px solid #bfbfbf
+	border-radius: 5px
+
+	&:focus
+		outline: none 
+		border: 1px solid #84b3e7
+		box-shadow: 0 0 4px #84b3e7
+
+.sidebar
+	max-width: 300px
+
+@media (max-width: 700px)
+	.sidebar
+		max-width: none
+
+.table-hover
+	tbody
+		tr:hover
+			td,
+			th
+				background-color: #ebebeb;
+
+.buttons
+	margin: 
+		top: 20px
+		bottom: 20px
+	.btn
+		margin-right: 6px
+	.btn-sort
+		background-color: #fff
+		border: 1px solid #0099cc;
+		color: #0099cc;
+
+		&:hover
+			color: #007aa3
