@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app'>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,23 +8,30 @@
 	<link rel="stylesheet" href="css/sass/main.css">
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
-<body>
+<body ng-controller='DataController as data'>
+
+							<!-- Top section -->
   		<div class="row">
 	      <div class="col-lg-12"><img src="/img/AngularJS.svg" class="img-responsive"></div>
 	      <p class="text-center">поиск и сортировка данных</p>
   		</div>
-  		<div class="container-fluid">
-		  <div class="row-fluid">
-		    <input class="col-md-12 col-xs-12" type="text" placeholder="Search people by name...">
-		    <div class="buttons">
-				<button class="btn btn-sort">Sort by name</button>
-			    <button class="btn btn-sort">Sort by age</button>
-			    <button class="btn btn-danger">Reset</button>
-		    </div>
-		   </div>
-		    <div class="sidebar col-xs-12 col-md-4 col-sm-4">
-				<img src="/img/sheep.svg" alt="">
-				<h4 class="text-center">Zachary Tucker</h4>
+
+							<!--Input and buttons-->
+  		<div class="container-fluid" >
+			<div class="row-fluid">
+				<input class="col-md-12 col-xs-12" type="text" placeholder="Search people by name..." ng-model='data.text' ng-pattern='data.regexp'>
+
+				<div class="buttons">
+					<button class="btn btn-sort">Sort by name</button>
+					<button class="btn btn-sort">Sort by age</button>
+					<button ng-click='data.reset()' class="btn btn-danger">Reset</button>
+				</div>
+			</div>
+
+							<!--Sidebar-->
+			<div class="sidebar col-xs-12 col-md-4 col-sm-4">
+				<img src="/img/sheep.svg">
+				<h4 class="text-center">{{sideName}}</h4>
 				<table class="table">
 					<tbody>
 						<tr>
@@ -41,8 +48,10 @@
 						</tr>
 					</tbody>
 				</table>
-		    </div>
-		    <div class="main-table col-sm-8  col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-1">
+			</div>
+
+							<!--Main content-->
+			<div class="main-table col-sm-8  col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-1">
 				<table class="table table-hover">
 				    <thead>
 				      <tr>
@@ -52,24 +61,12 @@
 				        <th>Phone</th>
 				      </tr>
 				    </thead>
-				    <tbody>
-				      <tr>
-				        <td><img src="/img/cat.svg" alt=""></td>
-				        <td>Adolf Hitler</td>
-				        <td>41</td>
-				        <td>sieg@example.com</td>
-				      </tr>
-				      <tr>
-				        <td><img src="/img/owl.svg" alt=""></td>
-				        <td>Joe</td>
-				        <td>3</td>
-				        <td>yo@gmail.com</td>
-				      </tr>
-				      <tr>
-				        <td><img src="/img/lion.svg" alt=""></td>
-				        <td>Joe THE GODDAM Lion</td>
-				        <td>15</td>
-				        <td>lion@gmail.com</td>
+				    <tbody ng-repeat='student in data.students | filter:data.text' >
+				      <tr ng-click='data.sideBar()'>
+				        <td><img ng-src='{{student.img}}'></td>
+				        <td>{{student.name}}</td>
+				        <td>{{student.age}}</td>
+				        <td>{{student.phone}}</td>
 				      </tr>
 				    </tbody>
 				</table>

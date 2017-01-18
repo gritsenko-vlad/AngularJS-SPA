@@ -2,6 +2,7 @@
   margin: 0 auto; }
 
 p {
+  font-family: 'Verdana';
   color: #ccc;
   text-transform: uppercase; }
 
@@ -33,8 +34,10 @@ input[type=text] {
   margin-top: 20px;
   margin-bottom: 20px; }
   .buttons .btn {
+    outline: none !important;
     margin-right: 6px; }
   .buttons .btn-sort {
+    outline: none !important;
     background-color: #fff;
     border: 1px solid #0099cc;
     color: #0099cc; }
