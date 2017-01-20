@@ -1,0 +1,15 @@
+{
+  "name": "AngularJS-SPA",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
