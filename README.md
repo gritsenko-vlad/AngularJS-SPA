@@ -1,6 +1,6 @@
 # AngularJS-SPA
 
-AngularJS single page application, in which you can sort and search people from current list.
+AngularJS single page application, in which you can sort and search people from list.
 
 ## See [demo](https://gritsenko-vlad.github.io/AngularJS-SPA/app/)
 
