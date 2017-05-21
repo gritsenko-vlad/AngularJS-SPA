@@ -2,7 +2,7 @@
 
 AngularJS single page application, in which you can sort and search people from list.
 
-## See [demo](https://gritsenko-vlad.github.io/AngularJS-SPA/app/)
+## See [demo](https://vlad-gritsenko.github.io/AngularJS-SPA/app/)
 
 ### Provided functionality:
  - Sort by name
